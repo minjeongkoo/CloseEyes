@@ -3,8 +3,8 @@
 
 Support for mobile and desktop environments, Web accessibility testing complete, and ongoing updates
 
-- Oki. Any Device, Any Browser. ☺️
-- Oki. If you can't see anything.✨
+- Fine. Any Device, Any Browser. ☺️
+- Fine. If you can't see anything.✨
 - Free. 🌷
 
 ## Features
