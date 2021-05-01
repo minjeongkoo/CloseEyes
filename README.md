@@ -14,8 +14,8 @@ Support for mobile and desktop environments, Web accessibility testing complete,
 - We will update heros of overwatch emoji.
 - You can see saved diaries and emoji.
 
-> This Project's code is simple and easy but 
-Maintaining web standards is like abiding by the law.
+> This Project's code is simple and easy. but I want to talk about "web accessibility".
+I think Maintaining web standards is like abiding by the law.
 Optimizing web accessibility is the same as keeping morality.
 
 ## Tech
