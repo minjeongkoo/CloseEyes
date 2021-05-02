@@ -1,12 +1,17 @@
 <template>
-  <div>
-    <p>
+  <div class="homeView">
+    <div>
       <span></span>
-    </p>
-    <H1>Home View</H1>
+    </div>
+    <H1>텍스트</H1>
   </div>
 </template>
 
 <script>
+// import axios from 'axios'
+
+export default {
+
+}
 
 </script>
