@@ -10,8 +10,10 @@ import request from 'request'
 export default {
   mounted() {
     request('http://localhost:8080/api/hello',function (error, response, data) {
-      window.console.log('Mylist View');
-      window.console.log('error:', error);
+      window.console.log('url:', this.uri.href);
+      if(error !== null) {
+        window.console.log('error:', error);
+      }
       window.console.log('response', response && response.statusCode);
       window.console.log('data:', data);
     });
