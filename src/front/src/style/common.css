@@ -1,0 +1,66 @@
+/* import tag */
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+/* common css */
+#app {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #37474F;
+}
+
+body {
+    min-width: 500px;
+    padding-top: 32px;
+    padding-left: 10%;
+    padding-right: 10%;
+    background: #FAFAFA;
+}
+
+::selection {
+    background: #5DF2D6;
+}
+
+h1 {
+    display: inline-block;
+    padding-top: 32px;
+    border-bottom: 10px #ECEFF1 solid;
+}
+
+span {
+    font-size: 12px;
+    transition: all 1s;
+}
+
+button {
+    min-width: 140px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: rgba(55, 71, 79, 0.01) 1px 0px;
+    transition: all 1.5s;
+}
+
+button:hover {
+    transition: all 1.5s;
+    opacity: 0.5;
+    position: relative;
+    bottom: -1px;
+}
+
+.btnMain {
+    background: #37474F;
+    color: #FFF;
+}
+
+.btnSub {
+    background: #FFF;
+    color: #37474F;
+}
+
