@@ -22,6 +22,12 @@ body {
     background: #5DF2D6;
 }
 
+h1 {
+    display: inline-block;
+    padding-top: 32px;
+    border-bottom: 10px #ECEFF1 solid;
+}
+
 span {
     font-size: 12px;
     transition: all 1s;
@@ -57,3 +63,4 @@ button:hover {
     background: #FFF;
     color: #37474F;
 }
+
