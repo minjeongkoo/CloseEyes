@@ -1,0 +1,68 @@
+/* Home vue CSS*/
+.homeView {
+    padding-top: 140px;
+}
+
+.homeLogo-animatioon {
+    transition: all 1s;
+}
+
+.homeLogo-animatioon:hover {
+    transform: scaleX(1.2);
+    transition: all 1s;
+}
+
+.homeView b:first-child {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.mainButtonBox {
+    margin-top: 64px;
+}
+
+.mainButtonBox button {
+    margin: 8px;
+}
+
+.todayInfoList span {
+    margin-top: 16px;
+    line-height: 50px;
+    font-size: 26px;
+    font-weight: 100;
+}
+
+/* header component area */
+
+.controllArea {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 80%;
+    height: auto;
+    text-align: right !important;
+}
+
+.controllArea img {
+    width: 32px;
+    height: 32px;
+    cursor: ;
+}
+
+.controllArea button {
+    margin-left: 8px;
+}
+
+.controllArea span {
+    margin-left: 16px;
+    margin-right: 8px;
+    font-size: 16px;
+    line-height: 36px;
+}
+
+.controllArea select {
+    min-width: 120px;
+    height: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
