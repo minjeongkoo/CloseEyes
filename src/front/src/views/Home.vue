@@ -7,8 +7,8 @@
     <!-- user info -->
     <div class="todayInfoList">
       <span>
-        <b>오늘은 {{ todayDateyear }}년 {{ todayDateMonth }}월 {{ todaysUnit[todayDateUnit] }}요일 입니다. </b>         <br>
-        지금까지 n개의 일기를 작성하셨네요.  <br>
+        <b>오늘은 {{ todayDateyear }}년 {{ todayDateMonth }}월 {{ todaysUnit[todayDateUnit] }}요일 입니다.</b><br>
+        지금까지 n개의 일기를 작성하셨네요.<br>
         앞으로도 꾸준히 작성해주세요!
       </span>
     </div>
@@ -22,12 +22,9 @@
 
 <script>
 
-// Today's Date
-
 const todayDate = new Date();
 const todaysUnit = ["일","월","화","수","목","금","토","일"];
 
-console.log(todayDate);
 export default {
   data() {
     return {
@@ -39,6 +36,6 @@ export default {
     }
   }
 }
-console.log('todayDate.getDay():', todayDate.getDay());
+// console.log('todayDate.getDay():', todayDate.getDay());
 
 </script>

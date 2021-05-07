@@ -3,6 +3,10 @@
     padding-top: 140px;
 }
 
+.homeView h1 {
+    cursor: default;
+}
+
 .homeLogo-animatioon {
     transition: all 1s;
 }
@@ -30,6 +34,7 @@
     line-height: 50px;
     font-size: 26px;
     font-weight: 100;
+    cursor: default;
 }
 
 /* header component area */
@@ -38,6 +43,7 @@
     display: flex;
     justify-content: space-between;
     position: absolute;
+    top:32px;
     width: 80%;
     height: auto;
     text-align: right !important;
@@ -65,4 +71,53 @@
     height: 32px;
     padding-left: 8px;
     padding-right: 8px;
+}
+
+/* Writing vue CSS*/
+.subPages {
+    padding-top: 140px;
+}
+
+.subPages input, textarea {
+    width: 50%;
+    min-width: 300px;
+    padding: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border: none;
+    margin-bottom: 16px;
+    box-shadow: #90A4AE42 0px 2px 3px;
+    font-size: 20px;
+    transition: background-color 1s;
+}
+
+.write_title:hover {
+    background-color: #ECEFF1;
+    transition: background-color 1s;
+}
+
+.write_title:focus, .write_title:focus-visible {
+    border: none;
+    border-bottom: 3px solid #5DF2D6;
+    outline: none !important;
+    font-weight: 500;
+}
+
+.write_content {
+    height: 300px;
+    line-height: 40px;
+    resize: vertical;
+    transition: background-color 1s;
+}
+
+.write_content:hover {
+    background-color: #ECEFF1;
+    transition: background-color 1s;
+}
+
+.write_content:focus, .write_content:focus-visible {
+    border: none;
+    border-bottom: 3px solid #5DF2D6;
+    outline: none !important;
+    font-weight: 500;
 }

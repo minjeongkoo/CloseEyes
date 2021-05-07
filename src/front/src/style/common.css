@@ -10,11 +10,14 @@
     color: #37474F;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    min-width: 500px;
-    padding-top: 32px;
     padding-left: 10%;
     padding-right: 10%;
+    margin: 0;
     background: #FAFAFA;
 }
 
@@ -24,13 +27,23 @@ body {
 
 h1 {
     display: inline-block;
-    padding-top: 32px;
     border-bottom: 10px #ECEFF1 solid;
 }
 
 span {
     font-size: 12px;
     transition: all 1s;
+}
+
+select {
+    color: #37474F;
+    border: 1px solid #C1D5E0;
+}
+
+input, textarea {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-weight: 300;
+    color: #37474F;
 }
 
 button {
@@ -41,17 +54,16 @@ button {
     padding-right: 20px;
     border: none;
     border-radius: 10px;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-size: 20px;
     font-weight: 500;
     box-shadow: rgba(55, 71, 79, 0.01) 1px 0px;
-    transition: all 1.5s;
+    transition: all 0.5s;
 }
 
 button:hover {
-    transition: all 1.5s;
+    transition: all 0.5s;
     opacity: 0.5;
-    position: relative;
-    bottom: -1px;
 }
 
 .btnMain {
@@ -60,7 +72,36 @@ button:hover {
 }
 
 .btnSub {
-    background: #FFF;
+    background: #C1D5E0;
     color: #37474F;
 }
 
+/* Fragement View */
+
+.fragment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.8);
+}
+
+.fragment>div {
+    width: 500px;
+    height: fit-content;
+    background: #FFF;
+    padding: 32px;
+    border-radius: 16px;
+}
+
+.fragment .buttonBox {
+    margin-top: 32px;
+}
+
+.fragment .buttonBox>button:nth-child(1) {
+    margin-right: 16px;
+}
