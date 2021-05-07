@@ -22,8 +22,7 @@ Optimizing web accessibility is the same as keeping morality.
 
 OW Diary uses
 
-- Vue, Springboot, MariaDB
-- OpenJDK16
+- Vue, Springboot, MariaDB, Maven
 
 ## Installation
 
