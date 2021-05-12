@@ -11,29 +11,26 @@
       <textarea type="text" class="write_content" placeholder="오늘 있었던 일을 적어보세요."/><br>
     </div>
     <div class="mainButtonBox">
-      <button @click="showModal = true">취소하기</button>
+      <button v-on:click="openModal()">취소하기</button>
       <button class="btnMain" v-on:click="saveEvent()">저장하기</button>
+      <app-CancelFragment v-if="checkCancel"/>
     </div>
-    <modal v-show="showModal" @close="showModal = false">
-      <app-CancelFragment/>
-    </modal>
   </div>
 </template>
 
 <script>
-import cancelFragemnt from "@/components/cancelFragemnt"
+import cancelFragement from "@/components/cancelFragemnt"
 
 // Today's Date
 const writeClock = new Date();
 const unitList = ["일","월","화","수","목","금","토"];
-
-// Modal
+let modalStatus = false;
 
 export default {
   components: {
-    'app-CancelFragment': cancelFragemnt,
+    'app-CancelFragment': cancelFragement,
   },
-  data() {
+  data: function() {
     return {
       now_year: writeClock.getFullYear(),
       now_month: writeClock.getMonth(),
@@ -41,11 +38,19 @@ export default {
       now_day: writeClock.getDay(),
       now_clock: writeClock.getTime(),
       unitList: unitList,
-      showModal: false
-      // needCancel: needCancel
+      checkCancel: modalStatus
     }
   },
   methods: {
+    openModal() {
+      // this.modalStatus = true;
+      debugger
+      console.log('modalStatus',modalStatus)
+    },
+    saveEvent() {
+      console.log('saveEvent()','저장이 완료되었습니다.')
+      location.href = "/"
+    }
   }
 }
 
