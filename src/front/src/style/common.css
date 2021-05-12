@@ -2,12 +2,19 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 /* common css */
+
 #app {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    --ow-black: #37474F;
+    --ow-lightGray: #ECEFF1;
+    --ow-lightBlue: #C1D5E0;
+    --ow-mint: #5DF2D6;
+    --ow-background: #FAFAFA;
+    --ow-white: #FFF;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #37474F;
+    color: var(--ow-black);
 }
 
 html {
@@ -18,16 +25,16 @@ body {
     padding-left: 10%;
     padding-right: 10%;
     margin: 0;
-    background: #FAFAFA;
+    background: var(--ow-background);
 }
 
 ::selection {
-    background: #5DF2D6;
+    background: var(--ow-mint);
 }
 
 h1 {
     display: inline-block;
-    border-bottom: 10px #ECEFF1 solid;
+    border-bottom: 10px var(--ow-lightGray) solid;
 }
 
 span {
@@ -37,13 +44,13 @@ span {
 
 select {
     color: #37474F;
-    border: 1px solid #C1D5E0;
+    border: 1px solid var(--ow-lightBlue);
 }
 
 input, textarea {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-weight: 300;
-    color: #37474F;
+    color: var(--ow-black);
 }
 
 button {
@@ -67,41 +74,14 @@ button:hover {
 }
 
 .btnMain {
-    background: #37474F;
-    color: #FFF;
+    background: var(--ow-black);
+    color: var(--ow-white);
 }
 
 .btnSub {
-    background: #C1D5E0;
-    color: #37474F;
+    background: var(--ow-lightGray);
+    color: var(--ow-black);
 }
 
 /* Fragement View */
 
-.fragment {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(44, 62, 80, 0.8);
-}
-
-.fragment>div {
-    width: 500px;
-    height: fit-content;
-    background: #FFF;
-    padding: 32px;
-    border-radius: 16px;
-}
-
-.fragment .buttonBox {
-    margin-top: 32px;
-}
-
-.fragment .buttonBox>button:nth-child(1) {
-    margin-right: 16px;
-}

@@ -6,9 +6,39 @@
       <div class="buttonBox">
         <button class="btnSub">작성 취소하기</button>
         <slot>
-          <button class="btnMain" @click="$emit('close')">계속 작성하기</button>
+          <button class="btnMain">계속 작성하기</button>
         </slot>
       </div>
     </div>
   </div>
 </template>
+
+<style>
+.fragment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 62, 80, 0.8);
+}
+
+.fragment>div {
+  width: 500px;
+  height: fit-content;
+  background: var(--ow-white);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.fragment .buttonBox {
+  margin-top: 32px;
+}
+
+.fragment .buttonBox>button:nth-child(1) {
+  margin-right: 16px;
+}
+</style>

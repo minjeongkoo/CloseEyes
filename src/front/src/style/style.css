@@ -52,7 +52,7 @@
 .controllArea img {
     width: 32px;
     height: 32px;
-    cursor: ;
+    cursor: default;
 }
 
 .controllArea button {
@@ -92,13 +92,13 @@
 }
 
 .write_title:hover {
-    background-color: #ECEFF1;
+    background-color: var(--ow-lightGray);
     transition: background-color 1s;
 }
 
 .write_title:focus, .write_title:focus-visible {
     border: none;
-    border-bottom: 3px solid #5DF2D6;
+    border-bottom: 3px solid var(--ow-mint);
     outline: none !important;
     font-weight: 500;
 }
@@ -111,13 +111,13 @@
 }
 
 .write_content:hover {
-    background-color: #ECEFF1;
+    background-color: var(--ow-lightBlue);
     transition: background-color 1s;
 }
 
 .write_content:focus, .write_content:focus-visible {
     border: none;
-    border-bottom: 3px solid #5DF2D6;
+    border-bottom: 3px solid var(--ow-mint);
     outline: none !important;
     font-weight: 500;
 }
