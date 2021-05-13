@@ -52,7 +52,7 @@
 .controllArea img {
     width: 32px;
     height: 32px;
-    cursor: default;
+    cursor: pointer;
 }
 
 .controllArea button {
@@ -73,6 +73,16 @@
     padding-right: 8px;
 }
 
+.modalTextBox {
+    display: flex;
+    position: absolute;
+    border-radius: 4px;
+    padding: 4px 12px;
+    background: var(--ow-black);
+    color: var(--ow-white);
+    font-size: 0.625rem;
+}
+
 /* Writing vue CSS*/
 .subPages {
     padding-top: 140px;
@@ -86,21 +96,9 @@
     padding-bottom: 16px;
     border: none;
     margin-bottom: 16px;
-    box-shadow: #90A4AE42 0px 2px 3px;
+    box-shadow: var(--ow-lightGray) 0px 2px 3px;
     font-size: 20px;
     transition: background-color 1s;
-}
-
-.write_title:hover {
-    background-color: var(--ow-lightGray);
-    transition: background-color 1s;
-}
-
-.write_title:focus, .write_title:focus-visible {
-    border: none;
-    border-bottom: 3px solid var(--ow-mint);
-    outline: none !important;
-    font-weight: 500;
 }
 
 .write_content {
@@ -110,12 +108,12 @@
     transition: background-color 1s;
 }
 
-.write_content:hover {
-    background-color: var(--ow-lightBlue);
+.write_content:hover, .write_title:hover {
+    background-color: var(--ow-background);
     transition: background-color 1s;
 }
 
-.write_content:focus, .write_content:focus-visible {
+.write_title:focus, .write_content:focus {
     border: none;
     border-bottom: 3px solid var(--ow-mint);
     outline: none !important;
