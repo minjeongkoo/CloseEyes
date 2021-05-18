@@ -3,18 +3,45 @@
 
 /* common css */
 
-#app {
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+body {
     --ow-black: #37474F;
     --ow-lightGray: #ECEFF1;
     --ow-lightBlue: #C1D5E0;
     --ow-mint: #5DF2D6;
     --ow-background: #FAFAFA;
     --ow-white: #FFF;
+    color: var(--ow-black);
+    background: var(--ow-background);
+}
+
+.darkMode {
+    --ow-black: #FAFAFA !important;
+    --ow-background: #37474F !important;
+    --ow-white: #37474F !important;
+    color: var(--ow-black) !important;
+}
+
+.darkModeImages {
+    filter: invert(100%);
+}
+
+#app {
+    height: 100%;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: var(--ow-black);
+}
+
+.contentArea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.contentArea>div {
+    width: 100%;
 }
 
 html {
@@ -22,8 +49,9 @@ html {
 }
 
 body {
-    padding-left: 10%;
-    padding-right: 10%;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
     margin: 0;
     background: var(--ow-background);
 }
@@ -33,8 +61,13 @@ body {
 }
 
 h1 {
+    font-size: 1.6rem;
     display: inline-block;
     border-bottom: 10px var(--ow-lightGray) solid;
+}
+
+p {
+    font-size: 16px;
 }
 
 span {
@@ -54,15 +87,13 @@ input, textarea {
 }
 
 button {
-    min-width: 140px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 20px;
-    padding-right: 20px;
+    min-width: 120px;
+    padding: 0.6rem;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-    font-size: 20px;
+    font-size: 1rem;
     font-weight: 500;
     box-shadow: rgba(55, 71, 79, 0.01) 1px 0px;
     transition: all 0.5s;
@@ -79,8 +110,10 @@ button:hover {
 }
 
 .btnSub {
-    background: var(--ow-lightGray);
+    background: var(--ow-background);
     color: var(--ow-black);
+    border: solid 1px var(--ow-black);
+    box-shadow: rgba(55, 71, 79, 0.01) 1px 0px;
 }
 
 /* Fragement View */
@@ -101,7 +134,8 @@ button:hover {
 }
 
 .fragment>div {
-    width: 500px;
+    width: 60%;
+    max-width: 500px;
     height: fit-content;
     background: var(--ow-white);
     padding: 32px;

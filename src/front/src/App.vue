@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <app-header/>
-    <router-view/>
+    <div class="contentArea">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -10,7 +12,7 @@ import Header from "@/components/Header"
 
 export default {
   components: {
-    'app-header': Header,
+    'app-header': Header
   }
 }
 
@@ -18,3 +20,4 @@ export default {
 
 <style src="./style/common.css"></style>
 <style src="./style/style.css"></style>
+<style src="./style/responsive.css"></style>

@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  props: ['propsTest'],
+  props: ['props-popup-cancel'],
   methods: {
     closePopup: function () {
       this.$emit('keepWriting', '매개변수');

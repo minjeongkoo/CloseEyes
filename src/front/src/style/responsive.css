@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+    .writingVue {
+        padding-top: 0;
+    }
+    .writingVue input, textarea {
+        width: 250px;
+        padding: 16px;
+    }
+    .write_content {
+        height: 210px;
+    }
+}
