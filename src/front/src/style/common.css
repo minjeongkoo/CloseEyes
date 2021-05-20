@@ -33,13 +33,6 @@ body {
     text-align: center;
 }
 
-.contentArea {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
 .contentArea>div {
     width: 100%;
 }
@@ -61,7 +54,6 @@ body {
 }
 
 h1 {
-    font-size: 1.6rem;
     display: inline-block;
     border-bottom: 10px var(--ow-lightGray) solid;
 }
@@ -95,7 +87,7 @@ button {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-size: 1rem;
     font-weight: 500;
-    box-shadow: rgba(55, 71, 79, 0.01) 1px 0px;
+    box-shadow: rgb(55 71 79 / 30%) 0px 1px 3px;
     transition: all 0.5s;
 }
 
@@ -113,7 +105,6 @@ button:hover {
     background: var(--ow-background);
     color: var(--ow-black);
     border: solid 1px var(--ow-black);
-    box-shadow: rgba(55, 71, 79, 0.01) 1px 0px;
 }
 
 /* Fragement View */

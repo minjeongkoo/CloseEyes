@@ -2,8 +2,13 @@
 .homeView {
 }
 
+.homeView .homeLogo {
+    margin-top: 200px;
+}
+
 .homeView h1 {
-    cursor: default;
+    margin-top: 64px;
+    font-size: 42px;
 }
 
 .homeLogo-animatioon {
@@ -16,11 +21,11 @@
 }
 
 .mainButtonBox {
-    margin-top: 1.6rem;
+
 }
 
-.mainButtonBox button:nth-child(odd) {
-    margin-right: 0.5rem;
+.mainButtonBox>button:nth-child(1) {
+    margin-right: 16px;
 }
 
 .todayInfoList span {
@@ -123,4 +128,40 @@
 /* SVG Tag's Class */
 .svg_fillBlack {
     fill: var(--ow-black);
+}
+
+/* Footer Area */
+footer {
+    display: block;
+    justify-content: center;
+    margin-top: 200px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+}
+
+footer>div>div {
+    margin-right: 32px;
+    height: 32px;
+    border-bottom: 1px solid var(--ow-lightGray);
+    cursor: pointer;
+}
+
+footer img {
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
+}
+
+footer span {
+    line-height: 22px;
+}
+
+footer>div>div:nth-child(3) span{
+    opacity: 0.5;
+    cursor: default;
 }

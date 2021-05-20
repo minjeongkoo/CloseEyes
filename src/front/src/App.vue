@@ -4,15 +4,18 @@
     <div class="contentArea">
       <router-view/>
     </div>
+    <app-footer/>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header"
+import Footer from "@/components/footerArea"
 
 export default {
   components: {
-    'app-header': Header
+    'app-header': Header,
+    'app-footer': Footer
   }
 }
 
