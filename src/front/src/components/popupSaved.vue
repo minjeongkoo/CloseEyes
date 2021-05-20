@@ -13,7 +13,6 @@
 <script>
 export default {
   data() {
-    return ;
   },
   methods: {
     saved: function () {

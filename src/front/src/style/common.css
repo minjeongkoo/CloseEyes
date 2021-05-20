@@ -67,6 +67,10 @@ span {
     transition: all 1s;
 }
 
+span:hover, p:hover {
+    opacity: 0.5;
+}
+
 select {
     color: #37474F;
     border: 1px solid var(--ow-lightBlue);

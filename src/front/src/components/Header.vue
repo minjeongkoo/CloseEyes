@@ -26,8 +26,8 @@ const   backTextModal =   false;
 module.exports = {
   data: function () {
     return {
-      hideBackButton:   locationCheck,
-      backTextModal:    backTextModal
+      hideBackButton  :   locationCheck,
+      backTextModal   :   backTextModal
     }
   }
 }
