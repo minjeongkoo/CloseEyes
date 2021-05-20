@@ -1,57 +1,87 @@
 <template>
-  <div class="subPages">
-    <img class="homeLogo-animatioon" src="../assets/images/homeLogo.svg"/>
-    <br>
-<!--    <H1>무슨일이 있었나요?</H1>-->
+  <div class="writingVue">
     <div>
+      <!-- Logo SVG -->
+      <svg class="homeLogo-animatioon"
+           v-on:click="fragmentStatus.cancelModal=!fragmentStatus.cancelModal"
+           xmlns="http://www.w3.org/2000/svg" width="4rem" height="auto" viewBox="0 0 85 64">
+          <g transform="translate(-418.778 -202.389)">
+          <path class="svg_fillBlack" d="M459.781,202.389h2.988a1.342,1.342,0,0,0,.3.117,15.051,15.051,0,0,1,9.98,5.575.981.981,0,0,0,.8.18,28.966,28.966,0,0,1,4.342-.928,12.384,12.384,0,0,1,12.636,9.672,1.447,1.447,0,0,0,1.113,1.262,16.924,16.924,0,0,1,11.6,18.7c-1.173,6.767-5.262,11.268-11.81,13.608-.469.168-.79.323-.9.886a12.371,12.371,0,0,1-16.959,9.026.636.636,0,0,0-.888.234c-6.332,7.567-17.059,7.56-23.428-.016-.288-.342-.492-.331-.9-.221a20.767,20.767,0,0,1-4.17.952,12.394,12.394,0,0,1-12.752-9.626,1.632,1.632,0,0,0-1.236-1.354,17.089,17.089,0,0,1-11.134-11.739c-.26-.881-.4-1.8-.589-2.7v-3.265a3.384,3.384,0,0,0,.141-.462c1.12-6.966,5.122-11.6,11.793-14.054a1.362,1.362,0,0,0,1.044-1.139,12.36,12.36,0,0,1,12.7-9.764,35.2,35.2,0,0,1,4.887.948s.143-.157.279-.323a14.159,14.159,0,0,1,6.112-4.463C457.044,203.019,458.43,202.751,459.781,202.389Zm-9.722,34.443.089.221c-.249.215-.512.417-.746.646-1.606,1.573-3.218,3.14-4.8,4.732a2.285,2.285,0,0,0-.571,2.627,2.312,2.312,0,0,0,2.226,1.552q5.058.046,10.117,0a2.338,2.338,0,0,0,2.2-1.475,2.433,2.433,0,0,0-2.26-3.4c-1.252-.035-2.506-.007-3.99-.007,1.956-1.914,3.731-3.658,5.514-5.393a2.433,2.433,0,0,0,.746-2.877A2.52,2.52,0,0,0,456,231.93c-3.123.016-6.247,0-9.37.007a2.466,2.466,0,1,0-.017,4.895C447.76,236.837,448.909,236.832,450.059,236.832Zm19.92-9.794.1.223c-.231.194-.477.375-.692.585q-2.41,2.358-4.808,4.729a2.44,2.44,0,0,0,1.6,4.241q5.058.046,10.117,0a2.34,2.34,0,0,0,2.2-1.473,2.433,2.433,0,0,0-2.257-3.4c-1.253-.036-2.507-.007-3.978-.007,1.946-1.908,3.719-3.653,5.5-5.391a2.438,2.438,0,0,0,.748-2.877,2.519,2.519,0,0,0-2.585-1.533c-3.123.016-6.247,0-9.371.007a2.466,2.466,0,1,0-.021,4.895C467.679,227.043,468.829,227.038,469.979,227.038Z"/>
+        </g>
+      </svg>
+      <!-- toggle modal -->
+    </div>
+
+    <br>
+    <!-- 작성 영역 -->
+    <div>
+      <!-- 작성일 표시 -->
       <div>
-        <p>✍🏽 {{ now_year }}년 {{ now_month }}월 {{ now_date }}일 {{ unitList[now_day] }}요일에 작성됨</p>
+        <p>✍🏽 {{ timeData.now_year }}년 {{ timeData.now_month+1 }}월 {{ timeData.now_date }}일 {{ timeData.unitList[timeData.now_day] }}요일에 작성됨</p>
       </div>
-      <input type="text" class="write_title" placeholder="오늘 일기의 제목을 입력하고 tab을 눌러주세요."/><br>
-      <textarea type="text" class="write_content" placeholder="오늘 있었던 일을 적어보세요."/><br>
+      <!-- 제목 & 본문 입력 -->
+      <div>
+        <input type="text" class="write_title" placeholder="오늘 일기의 제목"/><br>
+        <textarea type="text" class="write_content" placeholder="오늘 있었던 일을 적어보세요."/><br>
+      </div>
     </div>
+    <!-- display.flex 버튼 -->
     <div class="mainButtonBox">
-      <button v-on:click="openModal()">취소하기</button>
-      <button class="btnMain" v-on:click="saveEvent()">저장하기</button>
-      <app-CancelFragment v-if="checkCancel"/>
+      <button class="btnSub" v-on:click="fragmentStatus.cancelModal=!fragmentStatus.cancelModal">취소하기</button>
+      <button class="btnMain" v-on:click="fragmentStatus.saveModal=!fragmentStatus.saveModal">저장하기</button>
     </div>
+    <!-- 팝업 -->
+      <modal-cancel v-if="fragmentStatus.cancelModal" :props-popup-cancel="fragmentStatus" @keepWriting="closeModal"></modal-cancel>
+      <modal-save v-if="fragmentStatus.saveModal"></modal-save>
+
   </div>
 </template>
 
 <script>
-import cancelFragement from "@/components/cancelFragemnt"
+import popupCancelCheck from "@/components/popupCancelCheck"
+import popupSaved from "@/components/popupSaved";
+
 
 // Today's Date
 const writeClock = new Date();
 const unitList = ["일","월","화","수","목","금","토"];
-let modalStatus = false;
+let status = false
 
 export default {
   components: {
-    'app-CancelFragment': cancelFragement,
+    'modal-cancel': popupCancelCheck,
+    'modal-save': popupSaved
   },
-  data: function() {
+  data: function () {
     return {
-      now_year: writeClock.getFullYear(),
-      now_month: writeClock.getMonth(),
-      now_date: writeClock.getDate(),
-      now_day: writeClock.getDay(),
-      now_clock: writeClock.getTime(),
-      unitList: unitList,
-      checkCancel: modalStatus
+      timeData: {
+        now_year: writeClock.getFullYear(),
+        now_month: writeClock.getMonth(),
+        now_date: writeClock.getDate(),
+        now_day: writeClock.getDay(),
+        now_clock: writeClock.getTime(),
+        unitList: unitList
+      },
+      fragmentStatus: {
+        cancelModal: false,
+        saveModal: false
+      }
     }
   },
   methods: {
-    openModal() {
-      // this.modalStatus = true;
-      debugger
-      console.log('modalStatus',modalStatus)
+    closeModal(test) {
+      console.log(test);
+      this.fragmentStatus.cancelModal = false;
     },
-    saveEvent() {
-      console.log('saveEvent()','저장이 완료되었습니다.')
-      location.href = "/"
-    }
   }
 }
 
+console.log(status)
+
 </script>
+
+<style scoped>
+.modalTextBoxArea {
+
+}
+</style>
