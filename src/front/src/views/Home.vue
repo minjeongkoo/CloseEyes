@@ -35,11 +35,11 @@ const todaysUnit = ["일","월","화","수","목","금","토","일"];
 export default {
   data() {
     return {
-      todayDateyear: todayDate.getFullYear(),
-      todayDateMonth: todayDate.getMonth()+1,
-      todayDateDay: todayDate.getDate(),
-      todayDateUnit: todayDate.getDay(),
-      todaysUnit: todaysUnit
+      todayDateyear   : todayDate.getFullYear(),
+      todayDateMonth  : todayDate.getMonth()+1,
+      todayDateDay    : todayDate.getDate(),
+      todayDateUnit   : todayDate.getDay(),
+      todaysUnit      : todaysUnit
     }
   }
 }

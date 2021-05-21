@@ -21,32 +21,63 @@ export default {
   },
   methods: {
     saveUsersTheme: function () {
+
       // Dark Mode  : userModeInfo == true
       // Light Mode : userModeInfo == false
-
       if ( userModeInfo == true ) {
+
         // Dark Mode
         let userMode = 'dark';
         localStorage.setItem("userMode", userMode);
+
       } else {
+
         // Light Mode
         let userMode = 'light';
         localStorage.setItem("userMode", userMode);
-      }
-      this.autoSetServiceTheme();
-    },
-    autoSetServiceTheme: function () {
-      if (localStorage.getItem('setMode') != undefined) {
 
+      }
+    }
+  },
+  mounted() {
+
+    const selectorOject = document.getElementById('themeSelector');
+
+    // 옵션 태그들의 selected 속성 전부 초기화
+    selectorOject[0].removeAttribute('selected');
+    selectorOject[1].removeAttribute('selected');
+    selectorOject[2].removeAttribute('selected');
+
+    // localstorage 에 있는 값을 기준으로 태그들에 selecred 속성 추가.
+    switch (localStorage.getItem('setMode')) {
+      case 'light' :    selectorOject[1].setAttribute('selected', '');
+                        break;
+      case 'dark'  :    selectorOject[2].setAttribute('selected', '');
+                        break;
+    }
+
+    const bodyObject = document.getElementsByTagName('body')[0];
+
+    if (localStorage.getItem('setMode') !== null) {
+      // 처음 로드시 유저가 테마를 세팅해놓은 정보가 있을 때. 동작 안함.
+      if (localStorage.getItem('setMode') == 'dark') {
+        bodyObject.className = "darkMode";
       } else {
-        if ( localStorage.getItem('userMode') == 'dark' ){
-          let bodyObject = document.getElementsByTagName('body')[0];
-          bodyObject.className =  "";
-          bodyObject.className += "darkMode";
-        }
+        odyObject.className = "";
+        bodyObject.removeAttribute('class');
+      }
+
+    } else {
+      // 처음 로드시 setMode 데이터 비어있을 때.
+      if (localStorage.getItem('userMode') == 'dark') {
+        bodyObject.className = "darkMode";
+      } else {
+        bodyObject.className = "";
+        bodyObject.removeAttribute('class');
       }
     }
   }
+
 }
 
 </script>

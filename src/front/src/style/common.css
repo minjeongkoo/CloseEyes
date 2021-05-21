@@ -51,6 +51,7 @@ body {
 
 ::selection {
     background: var(--ow-mint);
+    color: #37474F;
 }
 
 h1 {
