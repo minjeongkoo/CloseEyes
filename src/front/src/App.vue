@@ -36,9 +36,14 @@ export default {
       this.autoSetServiceTheme();
     },
     autoSetServiceTheme: function () {
-      if ( localStorage.getItem('userMode') == 'dark' ){
-        let bodyObject = document.getElementsByTagName('body')[0];
-        bodyObject.className += "darkMode"
+      if (localStorage.getItem('setMode') != undefined) {
+
+      } else {
+        if ( localStorage.getItem('userMode') == 'dark' ){
+          let bodyObject = document.getElementsByTagName('body')[0];
+          bodyObject.className =  "";
+          bodyObject.className += "darkMode";
+        }
       }
     }
   }
