@@ -7,7 +7,7 @@
         </g>
       </svg>
       <br>
-      <H1>편안한 꿈 꾸세요.</H1>
+      <h1>편안한 꿈 꾸세요.</h1>
       <!-- user info -->
       <div class="todayInfoList">
         <span>

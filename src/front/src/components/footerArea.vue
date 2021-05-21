@@ -1,5 +1,7 @@
 <template>
   <footer>
+    <!-- Title  -->
+    <h6>Footer</h6>
     <!-- Support Info -->
     <div>
       <div v-on:click="openGithubUrl">
@@ -11,23 +13,15 @@
         <span>문제 신고 & 기능 문의</span>
       </div>
       <div>
-        <span>Rekenzo_</span>
+        <span>Supported Rekenzo</span>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
-// New Window Url
-// function openGithubUrl() {
-//   console.log("run")
-//   window.open("https://github.com/minjeongkoo/owproject","","width=100%")
-// }
 
 export default {
-  data() {
-    return;
-  },
   methods: {
     openGithubUrl() {
       window.open("https://github.com/minjeongkoo/owproject");

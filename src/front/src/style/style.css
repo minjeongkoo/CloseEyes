@@ -134,9 +134,14 @@
 footer {
     display: block;
     justify-content: center;
-    margin-top: 200px;
+    margin-top: 3rem;
     padding-top: 32px;
     padding-bottom: 32px;
+}
+
+footer h6 {
+    padding-top: 1rem;
+    border-top: 1px solid var(--ow-lightGray);
 }
 
 footer div {
@@ -161,7 +166,11 @@ footer span {
     line-height: 22px;
 }
 
-footer>div>div:nth-child(3) span{
-    opacity: 0.5;
+footer>div>div:nth-child(3) span {
+    opacity: 0.8;
     cursor: default;
+}
+
+footer span:hover, footer p:hover {
+
 }
