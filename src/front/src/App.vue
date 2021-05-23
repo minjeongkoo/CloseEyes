@@ -12,6 +12,7 @@
 <script>
 import Header from "@/components/Header"
 import Footer from "@/components/footerArea"
+
 const userModeInfo = window.matchMedia('(prefers-color-scheme: Dark)').matches;
 
 export default {
@@ -24,7 +25,7 @@ export default {
 
       // Dark Mode  : userModeInfo == true
       // Light Mode : userModeInfo == false
-      if ( userModeInfo == true ) {
+      if (userModeInfo == true) {
 
         // Dark Mode
         let userMode = 'dark';
@@ -41,19 +42,21 @@ export default {
   },
   mounted() {
 
-    const selectorOject = document.getElementById('themeSelector');
+    const selectorObject = document.getElementById('themeSelector');
 
     // 옵션 태그들의 selected 속성 전부 초기화
-    selectorOject[0].removeAttribute('selected');
-    selectorOject[1].removeAttribute('selected');
-    selectorOject[2].removeAttribute('selected');
+    selectorObject[0].removeAttribute('selected');
+    selectorObject[1].removeAttribute('selected');
+    selectorObject[2].removeAttribute('selected');
 
     // localstorage 에 있는 값을 기준으로 태그들에 selecred 속성 추가.
     switch (localStorage.getItem('setMode')) {
-      case 'light' :    selectorOject[1].setAttribute('selected', '');
-                        break;
-      case 'dark'  :    selectorOject[2].setAttribute('selected', '');
-                        break;
+      case 'light' :
+        selectorObject[1].setAttribute('selected', '');
+        break;
+      case 'dark'  :
+        selectorObject[2].setAttribute('selected', '');
+        break;
     }
 
     const bodyObject = document.getElementsByTagName('body')[0];

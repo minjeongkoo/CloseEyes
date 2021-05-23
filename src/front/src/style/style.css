@@ -88,6 +88,20 @@
     font-size: 0.625rem;
 }
 
+.modalTextBox-center:hover {
+    transition: all 1s;
+}
+
+.modalTextBox-center>div {
+    display: inline-block;
+    position: absolute;
+    border-radius: 4px;
+    background: var(--ow-black);
+    color: var(--ow-white);
+    font-size: 0.625rem;
+    padding: 4px 12px;
+}
+
 /* Writing vue CSS*/
 .writingVue {
     padding-top: 140px;
@@ -95,14 +109,11 @@
 
 .writingVue input, textarea {
     width: 50%;
-    /*min-width: 300px;*/
     padding: 20px;
-    /*width: 100%;*/
     padding-top: 16px;
     padding-bottom: 16px;
     border: 1px solid var(--ow-lightGray);
     margin-bottom: 16px;
-    /*overflow: ellipsis;*/
     background: none;
     font-size: 16px;
     transition: background-color 1s;

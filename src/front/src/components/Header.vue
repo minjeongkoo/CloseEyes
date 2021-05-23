@@ -31,15 +31,15 @@ const locationCheck       = location.pathname !== '/';
 const backTextModal       = false;
 
 // User Theme Select Event and Reset Theme at O/S Default
-  const bodyObject        = document.getElementsByTagName('body')[0];
-  let setThemeStatus      = localStorage.getItem('setMode');
+const bodyObject          = document.getElementsByTagName('body')[0];
+let setThemeStatus        = localStorage.getItem('setMode');
 
 
 module.exports = {
   data: function () {
     return {
-      hideBackButton  :   locationCheck,
-      backTextModal   :   backTextModal,
+      hideBackButton: locationCheck,
+      backTextModal: backTextModal,
     }
   },
   methods: {

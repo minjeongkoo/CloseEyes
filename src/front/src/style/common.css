@@ -1,24 +1,27 @@
-/* import tag */
+/* import */
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
-/* common css */
+/* Common Tag & Common Class Style */
 
 body {
-    --ow-black: #37474F;
-    --ow-lightGray: #ECEFF1;
-    --ow-lightBlue: #C1D5E0;
-    --ow-mint: #5DF2D6;
-    --ow-background: #FAFAFA;
-    --ow-white: #FFF;
-    color: var(--ow-black);
-    background: var(--ow-background);
+    --ow-black:         #37474F;
+    --ow-lightGray:     #ECEFF1;
+    --ow-lightBlue:     #C1D5E0;
+    --ow-mint:          #5DF2D6;
+    --ow-background:    #FAFAFA;
+    --ow-default:       #FFFFFF;
+    --ow-white:         #FFF;
+    --ow-border:        #B0BEC5;
+    color:              var(--ow-black);
+    background:         var(--ow-background);
 }
 
 .darkMode {
-    --ow-black: #FAFAFA !important;
-    --ow-background: #37474F !important;
-    --ow-white: #37474F !important;
-    color: var(--ow-black) !important;
+    --ow-black:         #FAFAFA !important;
+    --ow-background:    #37474F !important;
+    --ow-white:         #37474F !important;
+    --ow-default:       #263238 !important;
+    color:              var(--ow-black) !important;
 }
 
 .darkModeImages {
