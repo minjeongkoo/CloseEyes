@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://localhost:3306/ow_project
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    generate-ddl: false
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
