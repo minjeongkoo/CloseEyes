@@ -10,8 +10,9 @@ import java.util.Date;
 @CrossOrigin("localhost:8080")
 @RestController
 public class HomeViewController {
+
     @RequestMapping("/api/homeview")
     public String homeview() {
-        return "homeData";
+        return "joiklinuhou";
     }
 }

@@ -44,12 +44,11 @@
 
 .controllArea {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
     top:32px;
-    width: 80%;
+    width: 100%;
     height: auto;
-    text-align: right !important;
 }
 
 .controllArea img {
@@ -74,6 +73,8 @@
     height: 32px;
     padding-left: 8px;
     padding-right: 8px;
+    background: none;
+    color: var(--ow-black);
 }
 
 .modalTextBox {
@@ -86,6 +87,20 @@
     font-size: 0.625rem;
 }
 
+.modalTextBox-center:hover {
+    transition: all 1s;
+}
+
+.modalTextBox-center>div {
+    display: inline-block;
+    position: absolute;
+    border-radius: 4px;
+    background: var(--ow-black);
+    color: var(--ow-white);
+    font-size: 0.625rem;
+    padding: 4px 12px;
+}
+
 /* Writing vue CSS*/
 .writingVue {
     padding-top: 140px;
@@ -93,15 +108,12 @@
 
 .writingVue input, textarea {
     width: 50%;
-    /*min-width: 300px;*/
     padding: 20px;
-    /*width: 100%;*/
     padding-top: 16px;
     padding-bottom: 16px;
-    border: none;
+    border: 1px solid var(--ow-lightGray);
     margin-bottom: 16px;
-    /*overflow: ellipsis;*/
-    box-shadow: var(--ow-lightGray) 0px 2px 3px;
+    background: none;
     font-size: 16px;
     transition: background-color 1s;
 }
@@ -109,7 +121,7 @@
 .write_content {
     height: 300px;
     line-height: 40px;
-    resize: vertical;
+    resize: none;
     transition: background-color 1s;
 }
 
