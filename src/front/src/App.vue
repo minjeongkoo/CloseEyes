@@ -66,7 +66,7 @@ export default {
       if (localStorage.getItem('setMode') == 'dark') {
         bodyObject.className = "darkMode";
       } else {
-        odyObject.className = "";
+        bodyObject.className = "";
         bodyObject.removeAttribute('class');
       }
 

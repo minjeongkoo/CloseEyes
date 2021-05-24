@@ -20,8 +20,8 @@
       </div>
       <!-- Button Box Area -->
       <div class="mainButtonBox">
-        <router-link class="btnSub" to="Mylist">aaa</router-link>
-        <router-link class="btnMain" to="Writing">bbbbbb</router-link>
+        <router-link class="btn btnSub" to="Mylist">전체 일기 리스트</router-link>
+        <router-link class="btn btnMain" to="Writing">오늘 일기 작성하기</router-link>
       </div>
     </div>
 </template>
