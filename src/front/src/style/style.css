@@ -24,7 +24,7 @@
 
 }
 
-.mainButtonBox>button:nth-child(1) {
+.mainButtonBox>a:nth-child(1), .mainButtonBox>button:nth-child(1) {
     margin-right: 16px;
 }
 
@@ -186,3 +186,33 @@ footer>div>div:nth-child(3) span {
 footer span:hover, footer p:hover {
 
 }
+
+/* My list vue CSS*/
+.mylist {
+    padding-top: 140px;
+}
+
+.mylist .diaryCard {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.mylist table {
+    width: 100%;
+}
+
+.mylist th {
+    background: var(--ow-black);
+    color: var(--ow-default);
+}
+
+.mylist table th:nth-child(1), .mylist table td:nth-child(1) {
+    text-align: left;
+    padding: 16px;
+    /*background: red;*/
+}
+
+.mylist table th:nth-child(2), .mylist table td:nth-child(2) {
+    /*background: blue;*/
+}
+

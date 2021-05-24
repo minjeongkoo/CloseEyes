@@ -46,8 +46,6 @@ html {
 
 body {
     height: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
     margin: 0;
     background: var(--ow-background);
 }
@@ -82,7 +80,7 @@ input, textarea {
     color: var(--ow-black);
 }
 
-button {
+button, .btn {
     min-width: 120px;
     padding: 0.6rem;
     border: none;
@@ -91,11 +89,12 @@ button {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-size: 1rem;
     font-weight: 500;
+    text-decoration: auto;
     box-shadow: rgb(55 71 79 / 30%) 0px 1px 3px;
     transition: all 0.5s;
 }
 
-button:hover {
+button:hover, .btn:hover {
     transition: all 0.5s;
     opacity: 0.5;
 }

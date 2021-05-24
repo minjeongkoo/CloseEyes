@@ -27,7 +27,7 @@
 
 <script>
 // Back Navigation  | 유저의 위치 확인 & modal 상태값 기본 상태
-const locationCheck       = location.pathname !== '/#';
+const locationCheck       = location.pathname !== '/';
 const backTextModal       = false;
 
 // User Theme Select Event and Reset Theme at O/S Default
