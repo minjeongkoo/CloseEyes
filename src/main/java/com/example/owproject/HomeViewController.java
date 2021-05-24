@@ -13,6 +13,6 @@ public class HomeViewController {
 
     @RequestMapping("/api/homeview")
     public String homeview() {
-        return "homeData";
+        return "joiklinuhou";
     }
 }

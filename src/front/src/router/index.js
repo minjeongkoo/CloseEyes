@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
 import Home from '../views/Home.vue'
 import Writing from '../views/Writing.vue'
 import Mylist from '../views/Mylist.vue'
@@ -23,8 +23,14 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  mode: 'hash',
+  // history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes
 })
+// const router = new VueRouter({
+//   // mode: 'hash',
+//   routes
+// })
 
 export default router

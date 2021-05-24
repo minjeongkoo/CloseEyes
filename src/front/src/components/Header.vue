@@ -27,7 +27,7 @@
 
 <script>
 // Back Navigation  | 유저의 위치 확인 & modal 상태값 기본 상태
-const locationCheck       = location.pathname !== '/';
+const locationCheck       = location.pathname !== '/#';
 const backTextModal       = false;
 
 // User Theme Select Event and Reset Theme at O/S Default
@@ -47,20 +47,20 @@ module.exports = {
 
       // Select    :: Light | Dark | OS
       // Function  :: Chance Data of LocalStorage 'setMode' Key's Value
-      if (event.target.value == 'light') {
+      if (event.target.value === 'light') {
 
         // Select Light Mode
         localStorage.setItem('setMode','light');
         this.setChangeTheme();
 
-      } else if (event.target.value == 'dark') {
+      } else if (event.target.value === 'dark') {
 
         // Select Dark Mode
         localStorage.setItem('setMode','dark');
         this.setChangeTheme();
 
 
-      } else if (event.target.value == 'osSet') {
+      } else if (event.target.value === 'osSet') {
 
         // Select O/S Setting
         localStorage.removeItem('setMode');
@@ -71,12 +71,12 @@ module.exports = {
     },
     setChangeTheme() {
 
-      if      ( localStorage.getItem('setMode') == 'dark'   ) { bodyObject.className = "darkMode";  }
-      else if ( localStorage.getItem('setMode') == 'light'  ) { bodyObject.className = "";          }
+      if      ( localStorage.getItem('setMode') === 'dark'   ) { bodyObject.className = "darkMode";  }
+      else if ( localStorage.getItem('setMode') === 'light'  ) { bodyObject.className = "";          }
 
     },
     autoSetServiceTheme() {
-      if ( localStorage.getItem('userMode') == 'dark' ){
+      if ( localStorage.getItem('userMode') === 'dark' ){
         bodyObject.className = "darkMode";
       } else {
         bodyObject.className = "";

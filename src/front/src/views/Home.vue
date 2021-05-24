@@ -20,8 +20,8 @@
       </div>
       <!-- Button Box Area -->
       <div class="mainButtonBox">
-        <button class="btnSub" onclick="location.href='mylist'">전체 일기 목록</button>
-        <button class="btnMain" onclick="location.href='writing'">오늘 일기 작성하기</button>
+        <router-link class="btnSub" to="Mylist">aaa</router-link>
+        <router-link class="btnMain" to="Writing">bbbbbb</router-link>
       </div>
     </div>
 </template>

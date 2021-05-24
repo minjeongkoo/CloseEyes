@@ -44,12 +44,11 @@
 
 .controllArea {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
     top:32px;
-    width: 80%;
+    width: 100%;
     height: auto;
-    text-align: right !important;
 }
 
 .controllArea img {
