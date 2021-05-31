@@ -3,7 +3,7 @@
     <div>
       <!-- Logo SVG -->
       <svg class="homeLogo-animatioon"
-           v-on:click       = "fragmentStatus.cancelModal=!fragmentStatus.cancelModal"
+           v-on:click       = ""
            v-on:mouseover   = "svgHoverModal = true"
            v-on:mouseout    = "svgHoverModal = false"
            xmlns="http://www.w3.org/2000/svg"
@@ -26,11 +26,21 @@
           <table>
             <th>일기 제목</th>
             <th>일기 작성일</th>
+            <th>편집하기</th>
             <tr v-for="diaryData in diaryDatas">
               <td>{{ diaryData.title }}</td>
               <td>{{ diaryData.createdAt }}</td>
+              <td>
+                <div>
+                  <button class="btnMain" v-on:click="this.removeItem(diaryData.id)">삭제하기</button>
+                  <button class="btnSub">수정하기</button>
+                </div>
+              </td>
             </tr>
           </table>
+        <!-- Modal -->
+        <modal-delete v-if="modalStatus.delete" :props-confirm="modalStatus.delete" @closeit="closeDeleteModal"></modal-delete>
+
       </div>
 
     </div>
@@ -39,11 +49,19 @@
 
 <script>
 import axios from 'axios';
+import confirm from "../../../../owproject/src/front/src/components/popup/confirm_Check_Delete";
 
 export default {
+  components: {
+    'modal-delete': confirm
+  },
   data() {
     return {
-      diaryDatas: Object
+      diaryDatas: Object,
+      modalStatus: {
+        delete: false,
+        svgHoverModal: false
+      }
     }
   },
   mounted: function () {
@@ -55,6 +73,19 @@ export default {
             .catch(function (error) {
               console.log(error);
             });
+  },
+  methods: {
+    removeItem(diaryData) {
+      // console.log(diaryData);
+      this.checkRemove();
+    },
+    checkRemove() {
+      this.modalStatus.delete = true;
+    },
+    closeDeleteModal(closeit) {
+      // console.log(closeit);
+      this.modalStatus.delete = false;
+    }
   }
 }
 

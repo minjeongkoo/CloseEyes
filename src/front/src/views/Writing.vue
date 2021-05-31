@@ -4,8 +4,6 @@
       <!-- Logo SVG -->
       <svg class="homeLogo-animatioon"
            v-on:click       = "fragmentStatus.cancelModal=!fragmentStatus.cancelModal"
-           v-on:mouseover   = "svgHoverModal = true"
-           v-on:mouseout    = "svgHoverModal = false"
            xmlns="http://www.w3.org/2000/svg"
            width="4rem"
            viewBox="0 0 85 64">
@@ -14,9 +12,6 @@
         </g>
       </svg>
       <!-- toggle modal -->
-      <div class="modalTextBox-center" v-show="svgHoverModal">
-        <div>홈으로 이동</div>
-      </div>
     </div>
 
     <br>

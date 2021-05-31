@@ -4,14 +4,18 @@
     <!-- Button Back -->
     <div>
       <!-- SVG -->
-      <div v-show="hideBackButton" onclick="history.back();" v-on:mouseover="backTextModal = true" v-on:mouseleave="backTextModal = false">
+      <div
+          v-if="hideBackButton"
+          onclick="window.history.back(-1)"
+          v-on:mouseover="textModalStatus = true"
+          v-on:mouseleave="textModalStatus = false">
         <svg id="arrow_back_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path id="path_7" data-name="path 7" d="M0,0H24V24H0Z" fill="none"/>
           <path id="path_8" data-name="path 8" d="M19,11H7.83l4.88-4.88a1.008,1.008,0,0,0,0-1.42,1,1,0,0,0-1.41,0L4.71,11.29a1,1,0,0,0,0,1.41l6.59,6.59a1,1,0,0,0,1.41-1.41L7.83,13H19a1,1,0,0,0,0-2Z" fill="var(--ow-black)"/>
         </svg>
       </div>
       <!-- modal -->
-      <div class="modalTextBox" v-show="backTextModal">뒤로가기</div>
+      <div class="modalTextBox" v-show="textModalStatus">뒤로가기</div>
     </div>
     <!-- Setting Theme -->
     <div>
@@ -27,19 +31,19 @@
 
 <script>
 // Back Navigation  | 유저의 위치 확인 & modal 상태값 기본 상태
-const locationCheck       = location.pathname !== '/';
-const backTextModal       = false;
+let locationCheck = location.hash !== '#/';
+const backTextModal = false;
 
 // User Theme Select Event and Reset Theme at O/S Default
-const bodyObject          = document.getElementsByTagName('body')[0];
-let setThemeStatus        = localStorage.getItem('setMode');
+const bodyObject = document.getElementsByTagName('body')[0];
+let setThemeStatus = localStorage.getItem('setMode');
 
 
 module.exports = {
   data: function () {
     return {
       hideBackButton: locationCheck,
-      backTextModal: backTextModal,
+      textModalStatus: backTextModal,
     }
   },
   methods: {
