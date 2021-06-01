@@ -1,93 +1,168 @@
 <template>
-  <div class="controllArea">
-
-    <!-- Button Back -->
+  <header>
     <div>
-      <!-- SVG -->
-      <div
-          v-if="hideBackButton"
-          onclick="window.history.back(-1)"
-          v-on:mouseover="textModalStatus = true"
-          v-on:mouseleave="textModalStatus = false">
-        <svg id="arrow_back_black_24dp" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path id="path_7" data-name="path 7" d="M0,0H24V24H0Z" fill="none"/>
-          <path id="path_8" data-name="path 8" d="M19,11H7.83l4.88-4.88a1.008,1.008,0,0,0,0-1.42,1,1,0,0,0-1.41,0L4.71,11.29a1,1,0,0,0,0,1.41l6.59,6.59a1,1,0,0,0,1.41-1.41L7.83,13H19a1,1,0,0,0,0-2Z" fill="var(--ow-black)"/>
-        </svg>
+      <!-- Logo -->
+      <div>
+        <router-link to="/">
+          <img style="margin-top: 10px" src="../assets/images/home-logo.svg">
+        </router-link>
       </div>
-      <!-- modal -->
-      <div class="modalTextBox" v-show="textModalStatus">뒤로가기</div>
-    </div>
-    <!-- Setting Theme -->
-    <div>
-      <select   @change="changeTheme($event)" id="themeSelector">
-        <option value="osSet"         >  디바이스 설정 테마    </option>
-        <option value="light"         >  Light Theme      </option>
-        <option value="dark"          >  Dark Theme       </option>
-      </select>
-    </div>
 
-  </div>
+      <div class="header-menu">
+        <div>
+          <router-link to="/">
+            <img src="../assets/images/header-home.svg">
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/mylist">
+            <img src="../assets/images/header-mylist.svg">
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/writing">
+            <img src="../assets/images/header-write.svg">
+          </router-link>
+        </div>
+      </div>
+      <div class="set-menu">
+        <span>환경설정 </span>
+        <div class="icon">
+          <img v-on:click="setModalOn" v-if="setIcoStatus" src="../assets/images/ico/ico_setting.svg"/>
+          <img v-on:click="setModalOff" v-if="setIcoClose" src="../assets/images/ico/ico_setting.svg"/>
+        </div>
+        <!-- set menu modal -->
+        <div class="set-menu-modal" v-show="setModalStatus">
+          <h6>Theme</h6>
+          <p v-on:click="setThemeMode('os')">디바이스 설정</p>
+          <p v-on:click="setThemeMode('light')">밝은 테마</p>
+          <p v-on:click="setThemeMode('dark')">어두운 테마</p>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
-// Back Navigation  | 유저의 위치 확인 & modal 상태값 기본 상태
-let locationCheck = location.hash !== '#/';
-const backTextModal = false;
+const rootObject = document.getElementsByTagName('body')[0];
+const osSetTheme = window.matchMedia('(prefers-color-scheme: Dark)').matches;
 
-// User Theme Select Event and Reset Theme at O/S Default
-const bodyObject = document.getElementsByTagName('body')[0];
-let setThemeStatus = localStorage.getItem('setMode');
-
-
-module.exports = {
+export default {
   data: function () {
     return {
-      hideBackButton: locationCheck,
-      textModalStatus: backTextModal,
+      setModalStatus: false,
+      setIcoStatus: true,
+      setIcoClose: false
     }
   },
   methods: {
-    changeTheme($event) {
-
-      // Select    :: Light | Dark | OS
-      // Function  :: Chance Data of LocalStorage 'setMode' Key's Value
-      if (event.target.value === 'light') {
-
-        // Select Light Mode
-        localStorage.setItem('setMode','light');
-        this.setChangeTheme();
-
-      } else if (event.target.value === 'dark') {
-
-        // Select Dark Mode
-        localStorage.setItem('setMode','dark');
-        this.setChangeTheme();
-
-
-      } else if (event.target.value === 'osSet') {
-
-        // Select O/S Setting
-        localStorage.removeItem('setMode');
-        this.autoSetServiceTheme();
-
-      }
-
+    setModalOn() {
+      this.setModalStatus = true;
+      this.setIcoStatus = false;
+      this.setIcoClose = true;
     },
-    setChangeTheme() {
-
-      if      ( localStorage.getItem('setMode') === 'dark'   ) { bodyObject.className = "darkMode";  }
-      else if ( localStorage.getItem('setMode') === 'light'  ) { bodyObject.className = "";          }
-
+    setModalOff() {
+      this.setModalStatus = false;
+      this.setIcoClose = false;
+      this.setIcoStatus = true;
     },
-    autoSetServiceTheme() {
-      if ( localStorage.getItem('userMode') === 'dark' ){
-        bodyObject.className = "darkMode";
-      } else {
-        bodyObject.className = "";
-        bodyObject.removeAttribute('class');
+    setThemeMode(mode) {
+      // console.log(mode);
+      switch (mode) {
+        case 'os':      if ( osSetTheme === true ) {
+                            // console.log('os, dark');
+                            localStorage.setItem('themeMode','dark')
+                        } else {
+                            // console.log('os, light');
+                            localStorage.setItem('themeMode','light')
+                        }
+                        location.reload();
+                        break;
+        case 'light':   localStorage.setItem('themeMode','light');
+                        location.reload();
+                        break;
+        case 'dark':    localStorage.setItem('themeMode', 'dark');
+                        location.reload();
+                        break;
       }
+    }
+  },
+  mounted() {
+    if ( localStorage.getItem('themeMode') === 'dark' ) {
+      rootObject.classList = 'darkMode';
+    } else {
+      rootObject.removeAttribute('class');
     }
   }
 }
 
 </script>
+
+<style>
+header {
+  display: flex;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+header>div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-menu {
+  display: flex;
+}
+
+.header-menu>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.set-menu {
+  display: flex;
+}
+
+.set-menu .icon {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.set-menu span {
+  margin-right: 12px;
+  line-height: 70px;
+  color: var(--ow-blue);
+}
+
+.set-menu-modal {
+  display: block;
+  width: 120px;
+  text-align: left;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: var(--ow-blue);
+  background: var(--ow-default);
+  box-shadow: rgb(55 71 79 / 30%) 0px 1px 3px;
+  position: absolute;
+  top: 72px;
+  border-radius: 10px;
+}
+
+.set-menu-modal p {
+  cursor: pointer;
+}
+
+..set-menu-modal p:hover {
+  background: var(--ow-mint);
+}
+
+
+</style>

@@ -10,6 +10,7 @@ body {
     --ow-mint:          #5DF2D6;
     --ow-background:    #FAFAFA;
     --ow-default:       #FFFFFF;
+    --ow-blue:          #90A4AE;
     --ow-white:         #FFF;
     --ow-border:        #B0BEC5;
     color:              var(--ow-black);
@@ -24,20 +25,12 @@ body {
     color:              var(--ow-black) !important;
 }
 
-.darkModeImages {
-    filter: invert(100%);
-}
-
 #app {
     height: 100%;
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-}
-
-.contentArea>div {
-    width: 100%;
 }
 
 html {
@@ -55,18 +48,22 @@ body {
     color: #37474F;
 }
 
+:focus-visible {
+    outline: 1px solid var(--ow-mint);
+    outline-style: revert;
+}
+
+:visited {
+    color: var(--ow-black);
+}
+
 h1 {
     display: inline-block;
     border-bottom: 10px var(--ow-lightGray) solid;
 }
 
-p {
+p, select, input, span {
     font-size: 16px;
-}
-
-span {
-    font-size: 12px;
-    transition: all 1s;
 }
 
 select {
