@@ -58,8 +58,7 @@ body {
 }
 
 h1 {
-    display: inline-block;
-    border-bottom: 10px var(--ow-lightGray) solid;
+    font-size: 60px;
 }
 
 p, select, input, span {
@@ -78,8 +77,12 @@ input, textarea {
 }
 
 button, .btn {
+    display: inline-block;
     min-width: 120px;
-    padding: 0.6rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 14px;
+    padding-bottom: 14px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -93,18 +96,17 @@ button, .btn {
 
 button:hover, .btn:hover {
     transition: all 0.5s;
-    opacity: 0.5;
 }
 
 .btnMain {
-    background: var(--ow-black);
-    color: var(--ow-white);
+    background: #C1D5E0;
+    color: #263238;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .btnSub {
-    background: var(--ow-background);
-    color: var(--ow-black);
-    border: solid 1px var(--ow-black);
+
 }
 
 /* Fragement View */
