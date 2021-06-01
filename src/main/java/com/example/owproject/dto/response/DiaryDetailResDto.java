@@ -10,11 +10,13 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class DiaryResDto {
+public class DiaryDetailResDto {
 
     private long id;
 
     private String title;
+
+    private String content;
 
     private LocalDateTime createdAt;
 }
